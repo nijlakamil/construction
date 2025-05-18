@@ -4,14 +4,14 @@
   align-items: center;
   height: 70px;
   padding: 0 40px;
-  background-color: rgba(255, 255, 255, 0.562); /* Light transparent white */
-
+  background-color: rgba(255, 255, 255, 0.562);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
 .navbar-brand {
@@ -23,30 +23,32 @@
   height: 80px;
   width: auto;
   object-fit: contain;
-  margin-right:0;
+  margin-right: 0;
 }
-.logo{
-  transition: transform 0.3s ease; /* Smooth transition */
-  cursor: pointer; /* Shows pointer on hover */
+
+.logo {
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.2); /* Increases size by 20% on hover */
+  transform: scale(1.2);
 }
 
 .company {
   font-size: 0.5rem;
   font-weight: bold;
   color: #021338;
- font-family: 'Lexend', sans-serif;
- padding-top: 12px;
+  font-family: 'Lexend', sans-serif;
+  padding-top: 12px;
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 30px;
-  margin: 65px;
+  margin: 0; /* changed */
+  padding: 0;
 }
 
 .navbar-links li a {
@@ -54,19 +56,17 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-   
-  cursor: pointer; /* Shows pointer on hover */
+  cursor: pointer;
 }
-
 
 .navbar-links li a:hover {
   color: #00cc66;
-
 }
 
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
+    align-items: center; /* added */
     height: auto;
     padding: 10px 20px;
     gap: 10px;
@@ -79,7 +79,7 @@
   }
 
   .logo-img {
-    height: 50px; /* smaller logo */
+    height: 50px;
   }
 
   .company {
@@ -96,7 +96,7 @@
   }
 
   .navbar-links li {
-    flex: 1 1 auto;
+    flex: initial; /* changed */
     text-align: center;
   }
 
