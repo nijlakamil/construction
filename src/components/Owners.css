@@ -1,0 +1,217 @@
+.owners-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Lexend', sans-serif;
+  color: white;
+  padding: 8rem 1rem 5rem; /* <- Here’s the key fix */
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Fullscreen video background */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4);
+}
+
+/* Heading */
+.owners-heading {
+
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: rgba(193, 240, 252, 0.582);
+  text-shadow: 0 0 8px rgba(108, 216, 252, 0.4);
+  user-select: none;
+   font-family: 'Lexend', sans-serif;
+
+}
+.owners-heading:hover{
+    color: aliceblue;
+}
+
+/* Wrapper for owner cards */
+.owners-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Owner Card */
+.owner-card {
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  max-width: 300px;
+  padding: 2rem 1.5rem 2.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease, scale 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Scroll-triggered entrance animations */
+.owner-card.animate-slideInLeft {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.owner-card.animate-slideInUp {
+  animation: slideInUp 1s ease forwards;
+}
+
+.owner-card.animate-slideInRight {
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Hover scaling effect */
+.owner-card:hover {
+  transform: scale(1.05); /* enlarges on hover */
+  box-shadow: 0 12px 40px rgba(21, 189, 231, 0.4); /* optional glowing effect */
+}
+
+/* Owner Image */
+.owner-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid rgba(21, 189, 231, 0.4);
+  box-shadow: 0 0 15px rgba(21, 189, 231, 0.4);
+}
+
+/* Owner Name */
+.owner-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: rgba(21, 189, 231, 0.4);
+  user-select: none;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+/* Owner Title */
+.owner-title {
+  font-size: 1rem;
+  font-style: italic;
+  color: #a0f7c1;
+  margin-bottom: 1rem;
+  user-select: none;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+/* Owner Saying */
+.owner-saying {
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(65, 217, 255, 0.4);
+  margin-top: 1rem;
+  border-left: 3px solid rgba(143, 233, 255, 0.4);
+  padding-left: 1rem;
+  user-select: none;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+/* Animations */
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .owners-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .owner-card {
+    max-width: 90vw;
+  }
+
+  .owners-heading {
+    font-size: 2.4rem;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  .owners-container {
+    padding: 6rem 0.5rem 4rem;
+  }
+
+  .owners-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .owner-card {
+    padding: 1.5rem 1rem 2rem;
+    max-width: 95vw;
+  }
+
+  .owner-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .owner-name {
+    font-size: 1.3rem;
+  }
+
+  .owner-title {
+    font-size: 0.95rem;
+  }
+
+  .owner-saying {
+    font-size: 0.9rem;
+    padding-left: 0.8rem;
+  }
+}
+

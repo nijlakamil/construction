@@ -1,0 +1,158 @@
+/* Wrapper for the entire section */
+.video-banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video styling */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6);
+}
+
+/* Banner image area */
+.banner-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Scrollable track containing images */
+.banner-track {
+  display: flex;
+  width: 200%; /* For duplicate set */
+  animation: scrollBanner 30s linear infinite;
+  
+}
+
+/* Individual banner image */
+.banner-img {
+  flex: 0 0 calc(100% / 6);
+  height: 100vh;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  opacity: 80%;
+
+}
+
+.banner-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tagline text overlay */
+.banner-tagline {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  color: white;
+  font-family: 'Lexend', sans-serif;
+  padding: 1rem;
+}
+
+/* Gradient animated heading */
+.banner-tagline h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #05224d, #7bcefe, #0b4780);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s linear infinite;
+}
+
+
+/* Tagline paragraph */
+.banner-tagline p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #0a3a5add;
+  font-weight: bold;
+
+}
+
+.banner-tagline p:hover{
+  color: aliceblue;
+}
+/* Animated gradient for heading */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .banner-tagline h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-tagline p {
+    font-size: 1.1rem;
+  }
+
+  .banner-img {
+    flex: 0 0 100%;
+    height: 70vh;
+  }
+
+  .banner-track {
+    width: 1200%;
+  }
+}
+@media (max-width: 600px) {
+  .banner-tagline {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    width: 90%;
+  }
+
+  .banner-tagline h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .banner-tagline p {
+    font-size: 1rem;
+  }
+
+  .banner-img {
+    flex: 0 0 100%;  /* full width */
+    height: 50vh;    /* shorter height */
+  }
+
+  .banner-track {
+    width: 600%;     /* adjusted for smaller screens */
+  }
+}

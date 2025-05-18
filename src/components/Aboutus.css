@@ -1,0 +1,219 @@
+/* Container for everything */
+.about-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Lexend', sans-serif;
+  color: white;
+}
+
+/* Fullscreen video background */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+/* Wrapper for content: text + image */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto; /* center horizontally and vertically */
+  padding: 3rem 4rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.65); /* Slightly darker for better focus */
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  max-height: 90vh; /* max height so it doesn’t overflow screen */
+  overflow-y: auto; /* allow scroll if content is taller */
+  /* Remove fixed height */
+}
+
+
+/* Text section styling */
+.text-section {
+  flex: 1 1 400px;
+  max-width: 600px;
+  opacity: 0; /* initially hidden */
+  transition: opacity 0.6s ease;
+}
+
+.text-section.animate {
+  animation: slideInLeft 1.2s ease forwards;
+  opacity: 1;
+}
+
+/* Heading glow animation */
+.heading {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  animation: glowText 3s ease infinite alternate;
+  cursor: default;
+}
+
+/* Paragraph fade-in */
+.paragraph {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.text-section.animate .paragraph {
+  opacity: 1;
+}
+
+/* Image section styling */
+.image-section {
+  flex: 1 1 400px;
+  max-width: 500px;
+  opacity: 0; /* initially hidden */
+  transition: opacity 0.6s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.image-section.animate {
+  animation: slideInRight 1.5s ease forwards;
+  opacity: 1;
+}
+
+.animated-image {
+  width: 100%;
+
+  object-fit: cover;
+
+  /* Replace bright green shadow with a subtle shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+  /* Add a subtle border with low opacity */
+  border: 2px solid rgba(255, 255, 255, 0.15);
+
+  /* Slight soft overlay gradient for depth */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    rgba(0, 0, 0, 0.1)
+  );
+
+  animation: floatUpDown 6s ease-in-out infinite; /* slower and softer float */
+}
+
+
+/* Animations */
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #00cc66, 0 0 10px #00cc66;
+  }
+  to {
+    text-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .text-section, .image-section {
+    max-width: 100%;
+  }
+  .heading {
+    font-size: 2.4rem;
+  }
+  .paragraph {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 600px) {
+  .about-container {
+    height: auto; /* allow height to grow based on content */
+    padding: 1rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: 2rem;
+    max-width: 100%;
+    max-height: none; /* remove max height so content can scroll naturally */
+  }
+
+  .text-section, .image-section {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .animated-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain; /* better fit on small screens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+}

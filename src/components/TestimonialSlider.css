@@ -1,0 +1,147 @@
+.testimonial-slider-inspired {
+  max-width: 500px;
+  
+  border-radius: 10px;
+  padding: 30px 40px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+}
+
+.slider-heading-inspired {
+    font-size: 3rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #afd8fa;
+}
+.slider-heading-inspired:hover{
+    color: #ff6600;
+}
+
+.testimonial-box-inspired {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 30px 25px 35px 40px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  
+  /* Fix height */
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.quote-icon-inspired {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 28px;
+  height: 28px;
+  color: #cdf5ff;
+  opacity: 0.8;
+}
+
+.testimonial-text-inspired {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  text-align: left;
+  padding-left: 38px; /* space for icon */
+  font-style: italic;
+  color: #ddd;
+  flex-grow: 1; /* Takes up remaining space */
+  overflow-y: auto; /* Scroll if needed */
+}
+
+.company-name-inspired {
+  font-size: 0.95em;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 38px;
+  color: #c9e5ff;
+  margin-bottom: 5px;
+  flex-shrink: 0;
+}
+
+.client-name-inspired {
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  padding-left: 38px;
+  flex-shrink: 0;
+}
+
+.arrow-buttons-inspired {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.arrow-button {
+  background: transparent;
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .testimonial-slider-inspired {
+    max-width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .slider-heading-inspired {
+    font-size: 2rem;
+  }
+
+  .testimonial-box-inspired {
+    padding: 20px;
+    height: auto; /* Allow dynamic height */
+  }
+
+  .testimonial-text-inspired {
+    font-size: 1rem;
+    padding-left: 30px;
+  }
+
+  .company-name-inspired,
+  .client-name-inspired {
+    font-size: 0.9rem;
+    padding-left: 30px;
+  }
+
+  .arrow-buttons-inspired {
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .arrow-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .quote-icon-inspired {
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    left: 15px;
+  }
+}

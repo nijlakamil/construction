@@ -1,0 +1,106 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 40px;
+  background-color: rgba(255, 255, 255, 0.562); /* Light transparent white */
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-right:0;
+}
+.logo{
+  transition: transform 0.3s ease; /* Smooth transition */
+  cursor: pointer; /* Shows pointer on hover */
+}
+
+.logo:hover {
+  transform: scale(1.2); /* Increases size by 20% on hover */
+}
+
+.company {
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: #021338;
+ font-family: 'Lexend', sans-serif;
+ padding-top: 12px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 65px;
+}
+
+.navbar-links li a {
+  color: #021338;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+   
+  cursor: pointer; /* Shows pointer on hover */
+}
+
+
+.navbar-links li a:hover {
+  color: #00cc66;
+
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+
+  .logo-img {
+    height: 50px; /* smaller logo */
+  }
+
+  .company {
+    font-size: 0.7rem;
+    padding-top: 0;
+  }
+
+  .navbar-links {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    font-size: 0.9rem;
+  }
+}
