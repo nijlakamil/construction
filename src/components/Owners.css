@@ -180,38 +180,4 @@
 }
 
 
-@media (max-width: 600px) {
-  .owners-container {
-    padding: 6rem 0.5rem 4rem;
-  }
-
-  .owners-heading {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .owner-card {
-    padding: 1.5rem 1rem 2rem;
-    max-width: 95vw;
-  }
-
-  .owner-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-  }
-
-  .owner-name {
-    font-size: 1.3rem;
-  }
-
-  .owner-title {
-    font-size: 0.95rem;
-  }
-
-  .owner-saying {
-    font-size: 0.9rem;
-    padding-left: 0.8rem;
-  }
-}
 

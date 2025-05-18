@@ -164,33 +164,3 @@
     justify-content: center;
   }
 }
-@media (max-width: 480px) {
-  .buildright-footer-transparent {
-    padding: 20px 15px;
-  }
-
-  .footer-logo-transparent img {
-    height: 100px;
-    margin-bottom: 15px;
-  }
-
-  .footer-left-transparent p,
-  .footer-right-transparent p {
-    font-size: 13px;
-  }
-
-  .footer-column-transparent h3,
-  .footer-right-transparent h3 {
-    font-size: 14px;
-  }
-
-  .footer-column-transparent ul li a,
-  .footer-right-transparent a {
-    font-size: 13px;
-  }
-
-  .footer-social-transparent a {
-    font-size: 18px;
-  }
-}
-

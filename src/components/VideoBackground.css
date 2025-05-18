@@ -127,27 +127,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .overlay-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .overlay-text p {
-    font-size: 1rem;
-    margin-top: 0.8rem;
-  }
-
-  .overlay-button {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .overlay-text {
-    padding: 0 15px; /* avoid text cut-off */
-  }
-
-  .video-container {
-    height: 100vh; /* ensure it still takes full screen */
-  }
-}
